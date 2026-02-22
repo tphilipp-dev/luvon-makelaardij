@@ -1,0 +1,143 @@
+/* Basis Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1A1A1A;
+    --primary-light: #333333;
+    --bg-color: #FAFAFA;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--primary);
+    background-color: var(--bg-color);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Navigatie (Chique en subtiel) */
+nav {
+    position: fixed; /* Blijft nu bovenaan staan bij scrollen */
+    top: 0;
+    width: 100%;
+    padding: 2.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: all 0.4s ease;
+}
+
+nav.scrolled {
+    padding: 1.5rem 5%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #888;
+}
+
+/* Hero Sectie */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    /* Let op: Het pad is nu relatief vanuit de CSS map! */
+    background-image: url('../images/hero-bg.webp'); 
+    background-size: cover;
+    background-position: center bottom;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 1.05;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    color: var(--primary-light);
+}
+
+/* De Premium Knop (Afgerond, subtiel, elegant) */
+.btn-premium {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    background: transparent;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 1px solid var(--primary);
+    border-radius: 50px; /* Zorgt voor de ronde, pil-vormige uiteinden */
+    transition: all 0.4s ease;
+}
+
+.btn-premium:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Chique Laad-Animaties */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUpAnim 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+@keyframes fadeUpAnim {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
