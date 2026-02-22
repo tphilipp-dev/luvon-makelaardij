@@ -21,14 +21,14 @@ body {
     overflow-x: hidden;
 }
 
-/* Navigatie (Chique en subtiel) */
+/* Navigatie (High-End Symmetrie) */
 nav {
-    position: fixed; /* Blijft nu bovenaan staan bij scrollen */
+    position: fixed; 
     top: 0;
     width: 100%;
     padding: 2.5rem 5%;
-    display: flex;
-    justify-content: space-between;
+    display: grid; /* We gebruiken nu een grid voor perfecte uitlijning */
+    grid-template-columns: 1fr auto 1fr; 
     align-items: center;
     z-index: 100;
     transition: all 0.4s ease;
@@ -43,9 +43,10 @@ nav.scrolled {
 
 .logo {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 2.2rem; /* Iets groter gemaakt voor in het midden */
     font-weight: 500;
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
+    text-align: center;
 }
 
 .nav-links {
@@ -54,18 +55,22 @@ nav.scrolled {
     list-style: none;
 }
 
+/* Duwt de linker links naar links, en de rechter naar rechts */
+.nav-left { justify-content: flex-start; }
+.nav-right { justify-content: flex-end; }
+
 .nav-links a {
     text-decoration: none;
     color: var(--primary);
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px; /* Iets meer ademruimte */
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #888;
+    opacity: 0.5;
 }
 
 /* Hero Sectie - Gecentreerd en Premium */
@@ -123,26 +128,26 @@ nav.scrolled {
     color: var(--primary-light);
 }
 
-/* De Premium Knop (Verfijnd) */
+/* De Premium Knop (Massief & Zwevend) */
 .btn-premium {
     display: inline-block;
-    padding: 1rem 2.5rem;
-    background: transparent;
-    color: #111;
+    padding: 1.1rem 2.8rem;
+    background-color: var(--primary); /* Massief donker */
+    color: #ffffff; /* Strakke witte tekst */
     text-decoration: none;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    border: 1px solid rgba(17, 17, 17, 0.3); /* Veel zachtere rand */
+    border: none; /* Geen goedkope lijntjes meer */
     border-radius: 50px; 
-    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Subtiele zweef-schaduw */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Zeer soepele animatie */
 }
 
 .btn-premium:hover {
-    background: #111;
-    color: #fff;
-    border-color: #111;
-    transform: translateY(-3px);
+    background-color: #333; 
+    transform: translateY(-4px); /* Komt soepel omhoog bij hover */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2); /* Schaduw wordt groter */
 }
 
 /* Scroll Indicator (Extra detail) */
@@ -189,11 +194,10 @@ nav.scrolled {
     animation: fadeUpAnim 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
-.delay-3 { animation-delay: 0.6s; }
-.delay-4 { animation-delay: 0.8s; }
-.delay-5 { animation-delay: 1.0s; }
+/* De nieuwe, kloppende wachtrij: */
+.delay-1 { animation-delay: 0.2s; } /* Paragraaf */
+.delay-2 { animation-delay: 0.4s; } /* Knop */
+.delay-3 { animation-delay: 0.6s; } /* Scroll-lijntje */
 
 @keyframes fadeUpAnim {
     to {
