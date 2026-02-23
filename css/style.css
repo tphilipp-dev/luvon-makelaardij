@@ -207,59 +207,60 @@ nav.scrolled {
 }
 
 /* =========================================
-   MAIN CONTENT STYLING (Secties 2 t/m 5)
+   Nieuwe High-End Secties (Blok 2, 3 & 5)
    ========================================= */
 
-/* Basis Layout Containers */
-section { padding: 6rem 5%; }
-.container { max-width: 1200px; margin: 0 auto; }
-.container-small { max-width: 750px; margin: 0 auto; text-align: center; }
+/* Blok 2: Editorial Intro */
+.intro-elevated { padding: 10rem 5%; background-color: var(--bg-color); }
+.intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.intro-headline h2 { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin: 0; font-weight: 400; letter-spacing: -1px; }
 
-/* Typografie voor secties */
-section h2 { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 500; margin-bottom: 1.5rem; letter-spacing: -0.5px; }
-section p { font-size: 1.05rem; line-height: 1.8; color: var(--primary-light); font-weight: 300; }
+.intro-text-wrapper { position: relative; padding-left: 2rem; border-left: 1px solid rgba(0,0,0,0.1); }
+.intro-text-wrapper p { font-size: 1.1rem; line-height: 1.8; color: var(--primary-light); margin-bottom: 2rem; }
 
-/* Grid Systemen */
-.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 4rem; }
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
+/* Roterende SVG Stempel */
+.rotating-stamp { position: absolute; right: -50px; bottom: -50px; width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; opacity: 0.8; }
+.rotating-stamp svg { animation: rotateText 15s linear infinite; position: absolute; }
+.rotating-stamp .stamp-center { font-family: var(--font-heading); font-size: 2rem; font-weight: 600; }
+@keyframes rotateText { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-/* Blok 2: Introductie */
-.intro-section { background-color: var(--bg-color); }
+/* Blok 3: Interactieve Diensten */
+.services-interactive { padding: 5rem 5%; background-color: #fff; }
+.service-row { display: flex; align-items: center; padding: 3.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.1); text-decoration: none; color: var(--primary); transition: all 0.4s ease; position: relative; }
+.service-row:first-child { border-top: 1px solid rgba(0,0,0,0.1); }
 
-/* Blok 3: Splitsing Verkoop/Aankoop */
-.services-split { background-color: #ffffff; }
-.service-card { padding: 3rem; background: var(--bg-color); border-radius: 4px; display: flex; flex-direction: column; align-items: flex-start; }
-.service-card h3 { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1rem; font-weight: 500; }
-.service-card p { margin-bottom: 2.5rem; flex-grow: 1; }
+.service-number { font-size: 1rem; font-weight: 500; opacity: 0.3; width: 10%; transition: opacity 0.4s ease; }
+.service-content { width: 70%; }
+.service-content h3 { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 400; margin-bottom: 0.5rem; transition: transform 0.4s ease; }
+.service-content p { font-size: 1rem; color: var(--primary-light); opacity: 0.7; transition: opacity 0.4s ease; margin: 0; }
 
-.btn-outline {
-    display: inline-block; padding: 0.9rem 2rem; border: 1px solid var(--primary); color: var(--primary);
-    text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 50px; transition: all 0.3s ease;
-}
-.btn-outline:hover { background-color: var(--primary); color: #fff; }
+.service-arrow { width: 20%; display: flex; justify-content: flex-end; opacity: 0.3; transition: all 0.4s ease; }
 
-/* Blok 4: Aanbod & Funda */
-.offerings-section { background-color: var(--bg-color); }
-.section-header { text-align: center; margin-bottom: 4rem; }
+/* Hover Effecten op de rij */
+.service-row:hover .service-number { opacity: 1; }
+.service-row:hover .service-content h3 { transform: translateX(10px); }
+.service-row:hover .service-content p { opacity: 1; }
+.service-row:hover .service-arrow { opacity: 1; transform: translateX(10px); }
 
-.property-card { background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.3s ease; }
-.property-card:hover { transform: translateY(-5px); }
-.property-image { height: 250px; background-size: cover; background-position: center; }
-.property-info { padding: 2rem; text-align: center; }
-.property-info h4 { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 500; margin-bottom: 0.5rem; }
-.property-info .location { display: block; font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; }
-.property-info .price { font-weight: 500; font-size: 1.1rem; }
+/* Blok 5: Google Reviews */
+.google-reviews { padding: 8rem 5%; background-color: var(--bg-color); }
+.review-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 2rem; }
+.review-header h2 { font-size: 2.5rem; font-family: var(--font-heading); margin: 0; }
+.google-rating { text-align: right; }
+.google-rating .score { font-size: 2rem; font-weight: 600; display: inline-block; margin-right: 10px; }
+.google-rating .stars { color: #FBBC05; display: inline-block; font-size: 1.5rem; margin-right: 10px; }
+.google-rating .count { display: block; font-size: 0.8rem; color: #70757a; margin-top: 5px; }
 
-.center-btn { text-align: center; margin-top: 4rem; }
-.btn-funda {
-    display: inline-block; padding: 1.1rem 2.8rem; background-color: #F7A100; /* Funda Oranje als accent */
-    color: #fff; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
-    border-radius: 50px; font-weight: 600; box-shadow: 0 10px 20px rgba(247, 161, 0, 0.2); transition: all 0.3s ease;
-}
-.btn-funda:hover { background-color: #e09200; transform: translateY(-3px); box-shadow: 0 12px 25px rgba(247, 161, 0, 0.3); }
+.review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+.g-card { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.3s ease; }
+.g-card:hover { transform: translateY(-5px); }
 
-/* Blok 5: Reviews */
-.reviews-section { background-color: #ffffff; padding-bottom: 8rem; }
-.review-card { padding: 2rem; text-align: center; }
-.review-card p { font-style: italic; font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--primary); }
-.review-card .reviewer { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #888; }
+.g-user { display: flex; align-items: center; margin-bottom: 1.5rem; position: relative; }
+.g-user .avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.2rem; margin-right: 15px; }
+.g-user .user-info strong { display: block; font-size: 1rem; color: #202124; margin-bottom: 2px; }
+.g-user .user-info span { font-size: 0.8rem; color: #70757a; }
+.g-icon { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
+
+.g-stars { color: #FBBC05; font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+.g-stars .time { color: #70757a; font-size: 0.8rem; font-family: var(--font-body); }
+.g-card p { font-size: 0.95rem; color: #3c4043; line-height: 1.6; margin: 0; }
