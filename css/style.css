@@ -205,3 +205,61 @@ nav.scrolled {
         transform: translateY(0);
     }
 }
+
+/* =========================================
+   MAIN CONTENT STYLING (Secties 2 t/m 5)
+   ========================================= */
+
+/* Basis Layout Containers */
+section { padding: 6rem 5%; }
+.container { max-width: 1200px; margin: 0 auto; }
+.container-small { max-width: 750px; margin: 0 auto; text-align: center; }
+
+/* Typografie voor secties */
+section h2 { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 500; margin-bottom: 1.5rem; letter-spacing: -0.5px; }
+section p { font-size: 1.05rem; line-height: 1.8; color: var(--primary-light); font-weight: 300; }
+
+/* Grid Systemen */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 4rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
+
+/* Blok 2: Introductie */
+.intro-section { background-color: var(--bg-color); }
+
+/* Blok 3: Splitsing Verkoop/Aankoop */
+.services-split { background-color: #ffffff; }
+.service-card { padding: 3rem; background: var(--bg-color); border-radius: 4px; display: flex; flex-direction: column; align-items: flex-start; }
+.service-card h3 { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1rem; font-weight: 500; }
+.service-card p { margin-bottom: 2.5rem; flex-grow: 1; }
+
+.btn-outline {
+    display: inline-block; padding: 0.9rem 2rem; border: 1px solid var(--primary); color: var(--primary);
+    text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 50px; transition: all 0.3s ease;
+}
+.btn-outline:hover { background-color: var(--primary); color: #fff; }
+
+/* Blok 4: Aanbod & Funda */
+.offerings-section { background-color: var(--bg-color); }
+.section-header { text-align: center; margin-bottom: 4rem; }
+
+.property-card { background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.3s ease; }
+.property-card:hover { transform: translateY(-5px); }
+.property-image { height: 250px; background-size: cover; background-position: center; }
+.property-info { padding: 2rem; text-align: center; }
+.property-info h4 { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 500; margin-bottom: 0.5rem; }
+.property-info .location { display: block; font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; }
+.property-info .price { font-weight: 500; font-size: 1.1rem; }
+
+.center-btn { text-align: center; margin-top: 4rem; }
+.btn-funda {
+    display: inline-block; padding: 1.1rem 2.8rem; background-color: #F7A100; /* Funda Oranje als accent */
+    color: #fff; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
+    border-radius: 50px; font-weight: 600; box-shadow: 0 10px 20px rgba(247, 161, 0, 0.2); transition: all 0.3s ease;
+}
+.btn-funda:hover { background-color: #e09200; transform: translateY(-3px); box-shadow: 0 12px 25px rgba(247, 161, 0, 0.3); }
+
+/* Blok 5: Reviews */
+.reviews-section { background-color: #ffffff; padding-bottom: 8rem; }
+.review-card { padding: 2rem; text-align: center; }
+.review-card p { font-style: italic; font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--primary); }
+.review-card .reviewer { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #888; }
