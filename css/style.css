@@ -426,3 +426,20 @@ nav.scrolled {
     .brand-col .logo { text-align: center; }
     .brand-col p { margin: 0 auto; }
 }
+
+/* =========================================
+   SCROLL ANIMATIES (Worden geactiveerd door JS)
+   ========================================= */
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px); /* Start iets lager */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform; /* Optimaliseert de prestaties */
+}
+
+/* De class die Javascript toevoegt zodra je erheen scrolt */
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
