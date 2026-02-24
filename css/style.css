@@ -154,7 +154,7 @@ body { background-color: #ffffff; } /* Zet de hele basis op wit */
    8. BLOK 5: GOOGLE REVIEWS (Nu gekoppeld aan Contact)
    ========================================= */
 /* Onderkant minder padding zodat hij strak overloopt in het formulier */
-.google-reviews { padding: 8rem 5% 2rem; background-color: #ffffff; }
+.google-reviews { padding: 8rem 5% 8rem; background-color: #ffffff; }
 .review-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 2rem; }
 .google-rating { text-align: right; }
 .google-rating .score { font-size: 2rem; font-weight: 600; display: inline-block; margin-right: 10px; }
@@ -176,7 +176,7 @@ body { background-color: #ffffff; } /* Zet de hele basis op wit */
    9. BLOK 6: CONTACT & FORMULIER
    ========================================= */
 /* Bovenkant minder padding zodat hij oppakt waar reviews stopte */
-.contact-section { padding: 4rem 5% 8rem; } 
+.contact-section { padding: 8rem 5% 8rem; } 
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: stretch; }
 
 .contact-info { display: flex; flex-direction: column; }
