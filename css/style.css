@@ -21,13 +21,25 @@ body {
     overflow-x: hidden;
 }
 
+/* Globale Typografie Fix voor alle sectie-koppen */
+section h2, .section-header h2 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    color: var(--primary);
+}
+
+.section-header h2 {
+    font-size: 2.8rem; /* Maakt hem ook direct lekker groot en elegant */
+    letter-spacing: -1px;
+}
+
 /* Navigatie (High-End Symmetrie) */
 nav {
     position: fixed; 
     top: 0;
     width: 100%;
-    padding: 2.5rem 5%;
-    display: grid; /* We gebruiken nu een grid voor perfecte uitlijning */
+    padding: 1.5rem 5%; /* Was 2.5rem - Nu een stuk dunner */
+    display: grid; 
     grid-template-columns: 1fr auto 1fr; 
     align-items: center;
     z-index: 100;
@@ -35,7 +47,7 @@ nav {
 }
 
 nav.scrolled {
-    padding: 1.5rem 5%;
+    padding: 1rem 5%; /* Was 1.5rem - Nog strakker als je scrolt */
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
@@ -337,11 +349,13 @@ nav.scrolled {
     line-height: 1.8;
 }
 
-/* Footer (De Donkere Afsluiting) */
+/* Footer (De Premium Gradient Afsluiting) */
 .site-footer {
-    background-color: var(--primary); /* Maakt de achtergrond donker */
+    /* Een hele diepe, luxe gradient in plaats van plat zwart */
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%); 
     color: #ffffff;
     padding: 6rem 5% 2rem;
+    border-top: 1px solid rgba(255,255,255,0.05); /* Subtiel glanslijntje bovenaan */
 }
 
 .footer-grid {
@@ -349,6 +363,7 @@ nav.scrolled {
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 4rem;
     margin-bottom: 4rem;
+    max-width: 1300px; /* Iets breder gemaakt voor meer ademruimte */
 }
 
 .footer-col h4 {
