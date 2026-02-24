@@ -108,13 +108,34 @@ nav.scrolled { padding: 1rem 5%; background-color: rgba(255, 255, 255, 0.95); ba
 .link-arrow:hover { gap: 15px; }
 
 /* =========================================
-   7. BLOK 4: AANBOD & FUNDA
+   7. BLOK 4: AANBOD & FUNDA (Grijze podium achtergrond)
    ========================================= */
-.offerings-section { padding: 6rem 5%; background-color: #fff; }
+body { background-color: #ffffff; } /* Zet de hele basis op wit */
+
+.offerings-section { 
+    padding: 6rem 5%; 
+    background-color: #F4F5F7; /* Mooi, subtiel zachtgrijs als podium */
+}
+
 .section-header { text-align: center; margin-bottom: 4rem; }
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
-.property-card { background: var(--bg-color); border-radius: 4px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.03); }
-.property-card:hover { transform: translateY(-5px); }
+
+/* De Woning Kaart + Het 3D Pop-out effect */
+.property-card { 
+    background: #ffffff; 
+    border-radius: 4px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
+    border: 1px solid rgba(0,0,0,0.03);
+    /* Maak de transitie extra soepel voor zowel schaduw als positie */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+.property-card:hover { 
+    transform: translateY(-10px) scale(1.02); /* Komt soepel omhoog en naar voren */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12); /* Diepere schaduw waardoor hij 'zweeft' */
+}
+
 .property-image { height: 250px; background-size: cover; background-position: center; }
 .property-info { padding: 2rem; text-align: center; }
 .property-info h4 { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 500; margin-bottom: 0.5rem; }
@@ -133,7 +154,7 @@ nav.scrolled { padding: 1rem 5%; background-color: rgba(255, 255, 255, 0.95); ba
    8. BLOK 5: GOOGLE REVIEWS (Nu gekoppeld aan Contact)
    ========================================= */
 /* Onderkant minder padding zodat hij strak overloopt in het formulier */
-.google-reviews { padding: 8rem 5% 2rem; background-color: var(--soft-blue); } 
+.google-reviews { padding: 8rem 5% 2rem; background-color: #ffffff; }
 .review-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 2rem; }
 .google-rating { text-align: right; }
 .google-rating .score { font-size: 2rem; font-weight: 600; display: inline-block; margin-right: 10px; }
