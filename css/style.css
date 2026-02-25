@@ -1,6 +1,10 @@
 /* =========================================
    1. BASIS & VARIABELEN
    ========================================= */
+html {
+    scroll-behavior: smooth; /* Zorgt voor het glijden! */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -216,16 +220,41 @@ body { background-color: #ffffff; } /* Zet de hele basis op wit */
 .footer-bottom p { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.4; }
 
 /* =========================================
-   11. ANIMATIES (Hero + JS Reveal)
+   11. ANIMATIES (Hero direct, rest via JS)
    ========================================= */
-.fade-up { opacity: 0; transform: translateY(30px); animation: fadeUpAnim 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-.delay-1 { animation-delay: 0.2s; } 
-.delay-2 { animation-delay: 0.4s; } 
-.delay-3 { animation-delay: 0.6s; } 
-@keyframes fadeUpAnim { to { opacity: 1; transform: translateY(0); } }
+/* Hero elementen laden direct */
+.hero .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUpAnim 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
 
-.reveal-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
-.reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+@keyframes fadeUpAnim {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero .delay-1 { animation-delay: 0.2s; } 
+.hero .delay-2 { animation-delay: 0.4s; } 
+.hero .delay-3 { animation-delay: 0.6s; } 
+
+/* Scroll elementen (alles onder de hero) */
+main .fade-up, .footer-col {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+main .fade-up.is-visible, .footer-col.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Zet de timing om voor elementen die via JS laden */
+main .delay-1 { transition-delay: 0.15s; }
+main .delay-2 { transition-delay: 0.30s; }
+main .delay-3 { transition-delay: 0.45s; }
+main .delay-4 { transition-delay: 0.60s; }
 
 /* =========================================
    12. MOBIELE RESPONSIVITEIT
