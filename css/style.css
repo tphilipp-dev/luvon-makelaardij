@@ -338,3 +338,61 @@ main .delay-4 { transition-delay: 0.60s; }
     .brand-col .logo { text-align: center; }
     .brand-col p { margin: 0 auto; }
 }
+
+/* =========================================
+   13. WHATSAPP & COOKIE BANNER
+   ========================================= */
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    left: 30px;
+    background-color: var(--primary); /* Strak donkergrijs/zwart */
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    background-color: #000000;
+}
+
+/* Cookie Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: -300px; /* Begint verstopt buiten beeld */
+    right: 30px;
+    width: 320px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.05);
+    z-index: 1000;
+    transition: bottom 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Deze class voegt Javascript toe om hem in beeld te schuiven */
+.cookie-banner.show {
+    bottom: 30px;
+}
+
+.cookie-content { padding: 2rem; }
+.cookie-content h4 { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--primary); }
+.cookie-content p { font-size: 0.85rem; line-height: 1.6; color: var(--primary-light); margin-bottom: 1.5rem; }
+.btn-cookie { width: 100%; padding: 0.8rem; font-size: 0.7rem; cursor: pointer; }
+
+/* Mobiele optimalisatie voor de floaters */
+@media (max-width: 600px) {
+    .whatsapp-float { bottom: 20px; left: 20px; width: 50px; height: 50px; }
+    .whatsapp-float svg { width: 24px; height: 24px; }
+    .cookie-banner { right: 20px; left: 20px; width: auto; }
+}
