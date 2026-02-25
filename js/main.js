@@ -32,3 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Zet de 'wachter' op elk element
     animatedElements.forEach(el => observer.observe(el));
 });
+
+// 3. Cookie Banner Logica
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+
+    // Check in het geheugen of de cookies al geaccepteerd zijn
+    if (!localStorage.getItem('cookiesAccepted')) {
+        // Zo niet, laat hem na 1,5 seconde soepel in beeld schuiven
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 1500);
+    }
+
+    // Wat er gebeurt als je op de knop klikt
+    acceptBtn.addEventListener('click', () => {
+        // Sla de keuze op in het geheugen van de browser
+        localStorage.setItem('cookiesAccepted', 'true');
+        // Schuif de banner weer naar beneden
+        cookieBanner.classList.remove('show');
+    });
