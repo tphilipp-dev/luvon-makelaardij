@@ -249,7 +249,7 @@ body { background-color: #ffffff; } /* Zet de hele basis op wit */
 
 .footer-col p { margin-bottom: 1rem; }
 .footer-col ul { list-style: none; padding: 0; }
-.footer-col ul li { margin-bottom: 1rem; } /* Marges exact gelijk aan de p-tags voor perfecte lijnen */
+.footer-col ul li { margin-bottom: 0.2rem; } /* Marges verkleind zodat het exact de line-height van de tekst volgt */
 
 /* Kolom 1 Specifiek */
 .brand-col .logo { color: #ffffff; text-align: left; margin-bottom: 1rem; font-size: 2rem; }
