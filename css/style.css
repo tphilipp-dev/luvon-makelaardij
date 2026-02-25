@@ -88,7 +88,7 @@ nav.scrolled { padding: 1rem 5%; background-color: rgba(255, 255, 255, 0.95); ba
 /* HIER DE FIX VOOR DE FOTO: Aspect Ratio zorgt dat hij niet te lang wordt */
 .intro-img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); display: block; }
 
-.intro-text-wrapper h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1.15; margin-bottom: 2rem; font-family: var(--font-heading); font-weight: 400; color: var(--primary); letter-spacing: -0.5px;}
+.intro-text-wrapper h2 { font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.15; margin-bottom: 2rem; font-family: var(--font-heading); font-weight: 400; color: var(--primary); letter-spacing: -0.5px;}
 .intro-text-wrapper p { font-size: 1.1rem; line-height: 1.8; color: var(--primary-light); margin-bottom: 1.5rem; }
 .intro-text-wrapper strong { color: var(--primary); font-family: var(--font-heading); font-size: 1.3rem; font-weight: 500; font-style: italic;}
 
