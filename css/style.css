@@ -206,18 +206,84 @@ body { background-color: #ffffff; } /* Zet de hele basis op wit */
 /* =========================================
    10. FOOTER
    ========================================= */
-.site-footer { background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%); color: #ffffff; padding: 6rem 5% 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; max-width: 1300px; margin-left: auto; margin-right: auto; }
+.site-footer {
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%); 
+    color: #ffffff;
+    padding: 6rem 5% 2rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    overflow: hidden; /* Zorgt dat de gigantische tekst er niet 'uit' valt */
+}
+
+/* 1. De Gigantische LUVON tekst met fading effect */
+.footer-giant-text {
+    font-family: var(--font-heading);
+    font-size: clamp(6rem, 20vw, 18rem); /* Schaalt mee, wordt gigantisch op desktop! */
+    font-weight: 600;
+    line-height: 0.8;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    margin-bottom: 5rem;
+    /* Het magische fading gradient effect uit de BLITZ screenshot */
+    background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+}
+
+/* 2. De 3-koloms layout (2/4, 1/4, 1/4) */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 4rem;
+    margin-bottom: 4rem;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Typografie & Spacing (Exact gelijk getrokken) */
 .footer-col h4 { font-family: var(--font-body); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 1.5rem; opacity: 0.5; }
-.footer-col p, .footer-col a { color: #ffffff; font-size: 0.95rem; line-height: 1.8; text-decoration: none; opacity: 0.8; transition: opacity 0.3s ease; }
+.footer-col p, .footer-col a, .footer-col ul li { color: #ffffff; font-size: 0.95rem; line-height: 1.8; text-decoration: none; opacity: 0.8; transition: opacity 0.3s ease; }
 .footer-col a:hover { opacity: 1; }
+
+.footer-col p { margin-bottom: 1rem; }
 .footer-col ul { list-style: none; padding: 0; }
-.footer-col ul li { margin-bottom: 0.8rem; }
-.brand-col .logo { color: #ffffff; text-align: left; margin-bottom: 1rem; font-size: 2.5rem; }
-.brand-col p { max-width: 280px; font-size: 1.1rem; font-family: var(--font-heading); font-style: italic; opacity: 0.7; }
+.footer-col ul li { margin-bottom: 1rem; } /* Marges exact gelijk aan de p-tags voor perfecte lijnen */
+
+/* Kolom 1 Specifiek */
+.brand-col .logo { color: #ffffff; text-align: left; margin-bottom: 1rem; font-size: 2rem; }
+.brand-col .tagline { max-width: 320px; font-size: 1.1rem; font-family: var(--font-heading); font-style: italic; opacity: 0.7; margin-bottom: 3rem; }
+.opening-hours h4 { margin-bottom: 1rem; }
+
 .contact-links a { display: inline-block; margin-top: 0.2rem; }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; }
-.footer-bottom p { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.4; }
+
+/* 3. Bottom Bar (Flexbox verdeelt alles naar links en rechts) */
+.footer-bottom { 
+    border-top: 1px solid rgba(255,255,255,0.1); 
+    padding-top: 2rem; 
+    display: flex;
+    justify-content: space-between; /* Drukt de blokken naar de zijkanten */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-bottom p, .footer-bottom a { font-size: 0.8rem; color: #fff; opacity: 0.5; text-decoration: none; transition: opacity 0.3s ease; }
+.footer-bottom a:hover { opacity: 1; }
+
+/* Styling specifiek voor de link van jouw eigen bureau */
+.footer-bottom-left a { font-weight: 500; opacity: 0.8; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.3); }
+
+/* Rechterkant (Privacy, Cookies, etc.) spreiden */
+.footer-bottom-right { display: flex; gap: 2.5rem; }
+
+/* Mobiele Fixes */
+@media (max-width: 900px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .footer-bottom { flex-direction: column; text-align: center; justify-content: center; }
+    .footer-bottom-right { justify-content: center; width: 100%; gap: 1.5rem; flex-wrap: wrap; }
+}
 
 /* =========================================
    11. ANIMATIES (Hero direct, rest via JS)
