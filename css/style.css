@@ -351,11 +351,11 @@ main .delay-4 { transition-delay: 0.60s; }
 /* Telefoons (De Ultieme Detail-Fixes) */
 @media (max-width: 600px) {
     /* 1. NAVIGATIE: Originele HTML op 1 rij geforceerd! */
-    nav { 
+   nav { 
         display: flex; 
         flex-wrap: wrap; 
         justify-content: center; 
-        padding: 1.5rem 5% 1rem; 
+        padding: 1rem 5% 1rem; /* Eerst was het 1.5rem bovenaan, nu nog maar 1rem! */
     }
     nav.scrolled { padding: 1rem 5%; }
     
@@ -374,8 +374,8 @@ main .delay-4 { transition-delay: 0.60s; }
     .scroll-indicator { bottom: 20px; }
 
     /* 3. PADDING FIXES: Grote gaten dichten tussen de secties */
-    .intro-elevated { padding: 5rem 5%; }
-    .services-rich { padding: 4rem 5%; }
+    .intro-elevated { padding: 5rem 5% 2rem; } /* Onderkant is nu 2rem (bijna niks) */
+    .services-rich { padding: 2rem 5% 4rem; } /* Bovenkant is nu ook maar 2rem */
     .offerings-section { padding: 5rem 5%; }
     .google-reviews { padding: 4rem 5% 3rem; }
     .contact-section { padding: 3rem 5% 5rem; }
