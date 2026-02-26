@@ -355,7 +355,7 @@ main .delay-4 { transition-delay: 0.60s; }
         display: flex; 
         flex-wrap: wrap; 
         justify-content: center; 
-        padding: 0.7rem 5% 1.2rem; /* Eerst was het 1.5rem bovenaan, nu nog maar 1rem! */
+        padding: 0.6rem 5% 1.5rem; /* Eerst was het 1.5rem bovenaan, nu nog maar 1rem! */
     }
     nav.scrolled { padding: 1rem 5%; }
     
