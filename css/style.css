@@ -339,47 +339,57 @@ main .delay-4 { transition-delay: 0.60s; }
     .google-rating { text-align: left; }
 }
 
-/* Telefoons (De detail-fixes) */
+/* Telefoons (De Ultieme Detail-Fixes) */
 @media (max-width: 600px) {
-    /* 1. NAVIGATIE: Logo boven, 4 links in 1 rij eronder */
-    nav { 
-        display: flex; 
-        flex-wrap: wrap; 
-        justify-content: center; 
-        padding: 1rem 2%; 
-    }
-    nav.scrolled { padding: 0.8rem 2%; }
+    /* 1. NAVIGATIE: Perfect verdeeld */
+    nav { flex-direction: column; padding: 1.5rem 5% 1rem; gap: 1.5rem; }
+    nav.scrolled { padding: 1rem 5%; }
+    .logo { width: 100%; order: 1; font-size: 2.2rem; margin-bottom: 0; }
     
-    .logo { width: 100%; order: 1; font-size: 2rem; margin-bottom: 0.5rem; text-align: center; }
-    
-    .nav-links { width: auto; order: 2; gap: 10px; }
-    .nav-links a { font-size: 0.65rem; letter-spacing: 1px; padding: 0 2px; }
+    /* Ruimte perfect verdelen over de 4 linkjes */
+    .nav-links { width: 100%; order: 2; justify-content: space-between; gap: 0; }
+    .nav-links a { font-size: 0.65rem; letter-spacing: 1px; }
 
-    /* 2. HERO: Passend op het scherm */
-    .hero { height: 100vh; height: 100dvh; padding-top: 5rem; }
+    /* 2. HERO: Achtergrond vastzetten (svh voorkomt het irritante uitrekken!) */
+    .hero { height: 100vh; height: 100svh; padding-top: 5rem; }
     .hero h1 { font-size: clamp(2.8rem, 12vw, 4rem); margin-bottom: 1.5rem; }
     .hero p { font-size: 0.9rem; margin-bottom: 2rem; }
     .scroll-indicator { bottom: 20px; }
 
-    /* 3. KOPPEN: Kleiner maken zodat de hiërarchie weer klopt */
-    .section-header h2, .contact-info h2 { font-size: 2rem; line-height: 1.2; }
+    /* 3. PADDING FIXES: Grote gaten dichten tussen de secties */
+    .intro-elevated { padding: 5rem 5%; }
+    .services-rich { padding: 4rem 5%; }
+    .offerings-section { padding: 5rem 5%; }
+    .google-reviews { padding: 4rem 5% 3rem; }
+    .contact-section { padding: 3rem 5% 5rem; }
+    
     .section-header { margin-bottom: 2.5rem; }
+    .section-header h2, .contact-info h2 { font-size: 2rem; line-height: 1.2; }
 
-    /* 4. CONTACT: Gegevens netjes onder elkaar */
-    .contact-details { grid-template-columns: 1fr; gap: 1.5rem; }
+    /* 4. DIENSTEN KAARTEN: Tekst uit de knel halen */
+    .service-content-rich { padding: 1.5rem; } /* Was 3rem, nu veel meer ruimte voor de tekst! */
+    .service-content-rich h3 { font-size: 1.6rem; }
 
-    /* 5. FOOTER: Giant tekst écht giant maken */
+    /* 5. CONTACT: Gegevens dichter op elkaar */
+    .contact-details { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; }
+    .contact-info p { margin-bottom: 2rem; }
+
+    /* 6. FOOTER: Alles links uitgelijnd en LUVON maximaal! */
     .footer-giant-text { 
-        font-size: 24vw; /* Neemt nu bijna de hele breedte van de telefoon in! */
+        font-size: 30vw; /* Van 24vw naar 30vw: maximaal over de breedte */
         margin-bottom: 2rem; 
     }
-    .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
-    .brand-col .logo { text-align: center; }
-    .brand-col .tagline { margin: 0 auto 2rem auto; }
-    .footer-bottom { flex-direction: column; text-align: center; gap: 1.5rem; }
-    .footer-bottom-right { justify-content: center; width: 100%; gap: 1rem; flex-wrap: wrap; }
     
-    /* 6. WHATSAPP & COOKIE */
+    /* Teksten links in plaats van gecentreerd */
+    .footer-grid { grid-template-columns: 1fr; text-align: left; gap: 3rem; }
+    .brand-col .logo { text-align: left; }
+    .brand-col .tagline { margin: 0 0 2rem 0; } /* Marges gereset voor links uitlijnen */
+    
+    .footer-bottom { flex-direction: column; align-items: flex-start; text-align: left; gap: 1.5rem; }
+    /* Linkjes rechtsonder ook mooi links onder elkaar zetten */
+    .footer-bottom-right { flex-direction: column; gap: 0.8rem; }
+    
+    /* 7. WHATSAPP & COOKIE */
     .whatsapp-float { bottom: 20px; left: 20px; width: 50px; height: 50px; }
     .whatsapp-float svg { width: 24px; height: 24px; }
     .cookie-banner { right: 15px; left: 15px; width: auto; }
