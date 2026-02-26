@@ -323,8 +323,10 @@ main .delay-3 { transition-delay: 0.45s; }
 main .delay-4 { transition-delay: 0.60s; }
 
 /* =========================================
-   12. MOBIELE RESPONSIVITEIT
+   12. MOBIELE RESPONSIVITEIT (De Ultieme Fix)
    ========================================= */
+
+/* Tablets en kleine laptops */
 @media (max-width: 900px) {
     .intro-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
     .contact-form-wrapper { padding: 2rem; }
@@ -333,10 +335,49 @@ main .delay-4 { transition-delay: 0.60s; }
     .review-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
     .google-rating { text-align: left; }
 }
+
+/* Telefoons (De Hero & Navigatie fixes) */
 @media (max-width: 600px) {
-    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    /* 1. NAVIGATIE: Logo boven, linkjes er compact onder */
+    nav { 
+        padding: 1rem 5%; 
+        display: flex; 
+        flex-direction: column; /* Zet alles onder elkaar */
+        justify-content: center;
+        gap: 0.8rem;
+    }
+    nav.scrolled { padding: 0.8rem 5%; }
+    
+    .logo { width: 100%; font-size: 1.8rem; margin-bottom: 0; }
+    
+    .nav-links { width: 100%; justify-content: center; gap: 1.5rem; }
+    .nav-links a { font-size: 0.65rem; letter-spacing: 1.5px; }
+
+    /* 2. HERO: Precies 100% passend op je scherm (Above the fold) */
+    .hero {
+        height: 100vh; /* Fallback voor oude telefoons */
+        height: 100dvh; /* De magische Dynamic Viewport Height! */
+        padding-top: 5rem; /* Zorgt dat de nav niet over de tekst valt */
+    }
+
+    /* Maak de grote tekst en marges kleiner zodat het past */
+    .hero h1 { font-size: clamp(2.8rem, 12vw, 4rem); margin-bottom: 1.5rem; }
+    .hero p { font-size: 0.9rem; margin-bottom: 2rem; }
+    
+    .scroll-indicator { bottom: 20px; } /* Ietsjes omhoog getrokken */
+
+    /* 3. FOOTER: Alles netjes centreren op mobiel */
+    .footer-giant-text { font-size: 4rem; margin-bottom: 3rem; }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
     .brand-col .logo { text-align: center; }
-    .brand-col p { margin: 0 auto; }
+    .brand-col .tagline { margin: 0 auto 2rem auto; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 1.5rem; }
+    .footer-bottom-right { justify-content: center; width: 100%; gap: 1rem; flex-wrap: wrap; }
+    
+    /* 4. WHATSAPP & COOKIE BANNER: Mobiele afmetingen */
+    .whatsapp-float { bottom: 20px; left: 20px; width: 50px; height: 50px; }
+    .whatsapp-float svg { width: 24px; height: 24px; }
+    .cookie-banner { right: 15px; left: 15px; width: auto; }
 }
 
 /* =========================================
